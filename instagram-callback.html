@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Quiz Studio IA · voltando ao app</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Quiz Studio IA</h1>
+  <p id="msg">Voltando ao app neste computador…</p>
+</main>
+<script>
+  // Retorno do login da Meta (Instagram). O app roda só no computador do usuário (http://localhost:5173);
+  // a Meta exige um endereço HTTPS, então esta página apenas repassa a resposta para o app local.
+  // Nada é guardado nem enviado a outro lugar.
+  var q = location.search || '';
+  if (q) location.replace('http://localhost:5173/api/instagram/callback' + q);
+  else document.getElementById('msg').textContent = 'Nada a fazer aqui. Abra o Quiz Studio IA no seu computador.';
+</script>
+</body>
+</html>
